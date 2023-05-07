@@ -93,8 +93,14 @@ class ImageModifierGeneral implements ImageModifierInterface
         return $this->formattedImage;
     }
 
+    /**
+     * @return void
+     */
     public function display(): void
     {
-        // TODO: Implement display() method.
+        $contentType = 'Content-Type:'.$this->originalImage->type();
+        header($contentType);
+
+        $this->getModifiedImage();
     }
 }
