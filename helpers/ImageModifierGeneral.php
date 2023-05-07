@@ -38,7 +38,15 @@ class ImageModifierGeneral implements ImageModifierInterface
 
     public function getModifiedImage()
     {
-        // TODO: Implement getModifiedImage() method.
+        match ($this->originalImage->type()) {
+            'image/jpeg' => imagejpeg($this->formattedImage),
+            'image/gif' => imagepng($this->formattedImage),
+            'image/png' => imagegif($this->formattedImage),
+            'image/webp' => imagewebp($this->formattedImage),
+            'image/bmp' => imagebmp($this->formattedImage),
+        };
+
+        return $this->formattedImage;
     }
 
     public function display(): void
