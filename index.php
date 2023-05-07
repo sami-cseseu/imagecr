@@ -13,6 +13,10 @@ switch ($request) {
         require __DIR__.'/app/resize.php';
         break;
 
+    case '/crop'.$queryString:
+        require __DIR__.'/app/crop.php';
+        break;
+
     default:
         http_response_code(404);
         require __DIR__.'/app/404.php';
