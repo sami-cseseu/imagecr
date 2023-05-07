@@ -1,4 +1,5 @@
 <?php
+require_once 'constants.php';
 $request = $_SERVER['REQUEST_URI'];
 
 switch ($request) {
