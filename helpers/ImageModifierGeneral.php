@@ -80,6 +80,9 @@ class ImageModifierGeneral implements ImageModifierInterface
         );
     }
 
+    /**
+     * @return false|GdImage|resource
+     */
     public function getModifiedImage()
     {
         match ($this->originalImage->type()) {
